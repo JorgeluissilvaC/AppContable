@@ -1,3 +1,15 @@
-<p>
-  trabajadores-list works!
-</p>
+<h6 class="text-center"> Trabajadores registrados</h6>
+<table class="table table-sm table-hover"> 
+  <tr *ngFor="let Trabajador of TrabajadoresList">
+      <td>{{Trabajador.Nombre}}  </td>
+      <td>{{Trabajador.Apellido}}  </td>
+      <td>{{Trabajador.CC}}  </td>
+      <a class="btn" (click)="onEdit(Cliente)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn" (click)="onDelete(Cliente.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+  </tr>
+
+</table>

@@ -16,19 +16,45 @@ export class ClienteService {
   }
   insertCliente(cliente:Cliente){
     this.clienteList.push({
-      name    :cliente.name,
-      position:cliente.position,
-      office  :cliente.office,
-      salary  :cliente.salary
+      Tipo    :cliente.Tipo,
+      Nombres:cliente.Nombres,
+      Apellidos  :cliente.Apellidos,
+      CC  :cliente.CC,
+      DepartamentoR:cliente.DepartamentoR,
+      CiudadR:cliente.CiudadR,
+      DireccionR:cliente.DireccionR,
+      DepartamentoS:cliente.DepartamentoS,
+      CiudadS:cliente.CiudadS,
+      DireccionS:cliente.DireccionS,
+      Telefono:cliente.Telefono,
+      Extencion:cliente.Extencion,
+      TelFR:cliente.TelFR,
+      Celular:cliente.Celular,
+      FormaJ:cliente.FormaJ,
+      NIT:cliente.NIT,
+      NombreEmpresa:cliente.NombreEmpresa
     });
   }
 
   updateCliente(cliente:Cliente){
    this.clienteList.update(cliente.$key,{
-    name    :cliente.name,
-    position:cliente.position,
-    office  :cliente.office,
-    salary  :cliente.salary
+    Tipo    :cliente.Tipo,
+    Nombres:cliente.Nombres,
+    Apellidos  :cliente.Apellidos,
+    CC  :cliente.CC,
+    DepartamentoR:cliente.DepartamentoR,
+    CiudadR:cliente.CiudadR,
+    DireccionR:cliente.DireccionR,
+    DepartamentoS:cliente.DepartamentoS,
+    CiudadS:cliente.CiudadS,
+    DireccionS:cliente.DireccionS,
+    Telefono:cliente.Telefono,
+    Extencion:cliente.Extencion,
+    TelFR:cliente.TelFR,
+    Celular:cliente.Celular,
+    FormaJ:cliente.FormaJ,
+    NIT:cliente.NIT,
+    NombreEmpresa:cliente.NombreEmpresa
    });
   }
   deleteCliente($key:string){

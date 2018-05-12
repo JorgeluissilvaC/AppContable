@@ -34,10 +34,23 @@ resetForm(ClienteForm?:NgForm){
 
 this.clienteServices.selectedCliente={
   $key    :null,
-  name    :'',
-  position:'',
-  office  :'',
-  salary  :0,
+  Tipo    :0,
+  Nombres:'',
+  Apellidos  :'',
+  CC  :0,
+  DepartamentoR:'',
+  CiudadR:'',
+  DireccionR:'',
+  DepartamentoS:'',
+  CiudadS:'',
+  DireccionS:'',
+  Telefono:0,
+  Extencion:0,
+  TelFR:0,
+  Celular:0,
+  FormaJ:'',
+  NIT:0,
+  NombreEmpresa:''
 }
 }
 }

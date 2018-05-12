@@ -1,3 +1,32 @@
-<p>
-  trabajador works!
-</p>
+<form #trabajadorForm=ngForm (ngSubmit)="onSubmit(trabajadorForm)" >
+  <div class="form-group">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]=" trabajadorServices.selectedTrabajador.$key" required>
+    <label>Nombre</label>
+    <input class="form-control" name="Nombre" #Nombre="ngModel" [(ngModel)]=" trabajadorServices.selectedTrabajador.name" placeholder="Nombres" required>
+  </div>
+  <div class="form-group">
+    <label>Apellido</label>
+    <input class="form-control" name="Apellido" #Apellido="ngModel" [(ngModel)]=" trabajadorServices.selectedTrabajador.Apellido" placeholder="Apellidos">
+  </div>
+  <div class="form-group">
+    <label>CC</label>
+    <input class="form-control" name="CC" #CC="ngModel" [(ngModel)]=" trabajadorServices.selectedTrabajador.CC" placeholder="Número de identificación">
+  </div>
+  <div class="form-group">
+    <label>Telefono</label>
+    <input class="form-control" name="Telefono" #Telefono="ngModel" [(ngModel)]=" trabajadorServices.selectedTrabajador.Telefono" placeholder="Télefono">
+  </div>
+  <div class="form-group">
+    <label>Direccion</label>
+    <input class="form-control" name="Direccion" #Direccion="ngModel" [(ngModel)]=" trabajadorServices.selectedTrabajador.Direccion" placeholder="Dirección">
+  </div>
+
+  <div class="form-group">
+      <button class="bn btn-default" type="submit" [disabled]="!trabajadorForm.valid">
+        <i class="fa fa-floppy-o"></i>
+        Enviar</button>
+      <button class="bn btn-default" type="button" (click)="resetForm(trabajadorForm)">
+        <i class="fa fa-repeat"></i>
+        Reset</button>
+  </div>
+</form>

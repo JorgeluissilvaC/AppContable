@@ -1,8 +1,9 @@
 <h6 class="text-center"> Clientes registrados</h6>
 <table class="table table-sm table-hover"> 
   <tr *ngFor="let Cliente of ClientesList">
-      <td>{{Cliente.name}}  </td>
-      <td>{{Cliente.position}}  </td>
+      <td>{{Cliente.Nombres}}  </td>
+      <td>{{Cliente.Apellidos}}  </td>
+      <td>{{Cliente.CC}}  </td>
       <a class="btn" (click)="onEdit(Cliente)">
         <i class="fa fa-pencil-square-o"></i>
       </a>
