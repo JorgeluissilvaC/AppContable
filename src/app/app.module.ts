@@ -13,7 +13,25 @@ import{ ToastrModule, Toast}from 'ngx-toastr';
 import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 import { TrabajadoresListComponent } from './trabajadores/trabajadores-list/trabajadores-list.component';
 import { TrabajadorComponent } from './trabajadores/trabajador/trabajador.component';
+import { InicioComponent } from './inicio/inicio.component'
+import { NotFoundComponent } from './not-found/not-found.component'
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: InicioComponent
+  },
+  {
+    path: 'clientes',
+    component: ClientesComponent,
+  },
+  {
+    path: 'trabajadores',
+    component: TrabajadoresComponent,
+  },
+  { path: '**', component: NotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -24,14 +42,17 @@ import { TrabajadorComponent } from './trabajadores/trabajador/trabajador.compon
     TrabajadoresComponent,
     TrabajadoresListComponent,
     TrabajadorComponent,
-    
+    InicioComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
