@@ -10,29 +10,30 @@ import{ToastrService} from 'ngx-toastr'
 export class TrabajadorComponent implements OnInit {
 
 
-  constructor(private trabajadorService:TrabajadorService,private tostr:ToastrService) { }
+  constructor(private trabajadorServices:TrabajadorService,private tostr:ToastrService) { }
 
   ngOnInit() {
-    
     this.resetForm();
-
+    //this.tostr.success("Entré","Bebé");
   }
-onSubmit(ClienteForm:NgForm){
-if(ClienteForm==null){
-this.trabajadorService.insertTrabajador(ClienteForm.value);
+
+onSubmit(trabajadorForm:NgForm){
+  
+if(trabajadorForm==null){
+this.trabajadorServices.insertTrabajador(trabajadorForm.value);
 this.tostr.success("Registro Exitoso","Cliente registrado");
 }else{
-this.trabajadorService.updateTrabajador(ClienteForm.value);
+this.trabajadorServices.updateTrabajador(trabajadorForm.value);
 this.tostr.success("Registro Exitoso","Cliente Actulizado");
 }
-this.resetForm(ClienteForm);
+this.resetForm(trabajadorForm);
 
 
 }
-resetForm(ClienteForm?:NgForm){
-  if(ClienteForm!= null) ClienteForm.reset;
+resetForm(trabajadorForm?:NgForm){
+  if(trabajadorForm!= null) trabajadorForm.reset;
 
-this.trabajadorService.selectedTrabajador={
+this.trabajadorServices.selectedTrabajador={
   $key    :null,
   Nombre:'',
   Apellido  :'',

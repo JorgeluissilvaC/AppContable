@@ -13,7 +13,7 @@ export class ClienteComponent implements OnInit {
   constructor(private clienteServices:ClienteService,private tostr:ToastrService) { }
 
   ngOnInit() {
-    
+    this.tostr.success("Entré");
     this.resetForm();
 
   }
