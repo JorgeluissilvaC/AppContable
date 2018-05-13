@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{TrabajadorService} from '../share/trabajador.service';
 import{Trabajador} from '../share/trabajador.model';
-import { element } from 'protractor';
 import{ToastrService} from 'ngx-toastr';
 @Component({
   selector: 'app-trabajadores-list',
@@ -10,15 +9,15 @@ import{ToastrService} from 'ngx-toastr';
 })
 export class TrabajadoresListComponent implements OnInit {
 
-  TrabajadorList : Trabajador[];
-  constructor(private trabajadorServices:TrabajadorService,private tostr:ToastrService) { }
+  TrabajadorList: Trabajador[];
+  constructor(private trabajadorServices: TrabajadorService, private tost: ToastrService) { }
   ngOnInit() {
-    var x = this.trabajadorServices.getData();
-    x.snapshotChanges().subscribe(item=>{ 
-      this.TrabajadorList=[]
-      item.forEach(element =>{
-        var y =element.payload.toJSON();
-        y["$key"]=element.key;
+    let x = this.trabajadorServices.getData();
+    x.snapshotChanges().subscribe((item) => {
+      this.TrabajadorList = [];
+      item.forEach((Element) => {
+       const y = Element.payload.toJSON();
+        y["$key"] = Element.key;
         this.TrabajadorList.push(y as Trabajador);
       });
     });
