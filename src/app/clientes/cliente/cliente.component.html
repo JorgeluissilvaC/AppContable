@@ -1,23 +1,22 @@
 <form #clienteForm=ngForm (ngSubmit)="onSubmit(clienteForm)" >
+  <input type="hidden" class="form-control" name="$key" #$key="ngModel" [(ngModel)]=" clienteServices.selectedCliente.$key">
   <div class="form-group">
-    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]=" clienteServices.selectedCliente.$key" required>
     <label>Tipo</label>
-    <input class="form-control" name="Tipo" #Tipo="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Tipo" placeholder="Tipo de Cliente" required>
+    <input class="form-control" name="Tipo" #Tipo="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Tipo" placeholder="Tipo de Cliente" >
   </div>
   <div class="form-group">
     <label>Nombres</label>
-    <input class="form-control" name="Nombres" #Nombres="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Nombres" placeholder="Nombres">
+    <input class="form-control" name="Nombres" #Nombres="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Nombres" placeholder="Nombres" required>
   </div>
   <div class="form-group">
     <label>Apellidos</label>
-    <input class="form-control" name="Apellidos" #Apellidos="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Apellidos" placeholder="Apellidos">
+    <input class="form-control" name="Apellidos" #Apellidos="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Apellidos" placeholder="Apellidos" required>
   </div>
 
   <div class="form-group">
     <label>CC</label>
     <input class="form-control" name="CC" #CC="ngModel" [(ngModel)]=" clienteServices.selectedCliente.CC" placeholder="CC">
   </div>
-
 
   <div class="form-group">
     <label>Departamentode residencia</label>
@@ -34,7 +33,6 @@
     <input class="form-control" name="DireccionR" #DireccionR="ngModel" [(ngModel)]=" clienteServices.selectedCliente.DireccionR" placeholder="Dirección de residencia">
   </div>
 
-  
   <div class="form-group">
     <label>Departamento de Servicio</label>
     <input class="form-control" name="DepartamentoS" #DepartamentoS="ngModel" [(ngModel)]=" clienteServices.selectedCliente.DepartamentoS" placeholder="Departamento de Servicio">
@@ -51,11 +49,52 @@
   </div>
   
   <div class="form-group">
-      <button class="bn btn-default" type="submit" [disabled]="!clienteForm.valid">
-        <i class="fa fa-floppy-o"></i>
-        Enviar</button>
-      <button class="bn btn-default" type="button" (click)="resetForm(clienteForm)">
-        <i class="fa fa-repeat"></i>
-        Reset</button>
+    <label>Téfono Servicio</label>
+    <input class="form-control" name="Telefono" #Telefono="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Telefono" placeholder="Telefono">
   </div>
+  <div class="form-group">
+    <label>EXT </label>
+    <input class="form-control" name="Extencion" #Extencion="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Extencion" placeholder="Extención">
+  </div>
+
+  <div class="form-group">
+    <label>Téfono Residencia </label>
+    <input class="form-control" name="TelFR" #TelFR="ngModel" [(ngModel)]=" clienteServices.selectedCliente.TelFR" placeholder="Telefono">
+  </div>
+
+
+  <div class="form-group">
+    <label>Celular </label>
+    <input class="form-control" name="Celular" #Celular="ngModel" [(ngModel)]=" clienteServices.selectedCliente.Celular" placeholder="Celular">
+  </div>
+
+
+
+  <div class="form-group">
+    <label>Forma Juridica </label>
+    <input class="form-control" name="FormaJ" #FormaJ="ngModel" [(ngModel)]=" clienteServices.selectedCliente.FormaJ" placeholder="Forma Jurídica">
+  </div>
+
+  <div class="form-group">
+    <label>NIT </label>
+    <input class="form-control" name="NIT" #NIT="ngModel" [(ngModel)]=" clienteServices.selectedCliente.NIT" placeholder="NIT">
+  </div>
+
+  <div class="form-group">
+    <label>Nombre de Empresa </label>
+    <input class="form-control" name="NombreEmpresa" #NombreEmpresa="ngModel" [(ngModel)]=" clienteServices.selectedCliente.NombreEmpresa" placeholder="Empresa">
+  </div>
+
+
+  <div class="form-group">
+    <button class="btn waves-effect waves-light" type="submit" [disabled]="!clienteForm.valid">Guardar
+      <i class="material-icons right">send</i>
+    </button>
+    <button class="btn waves-effect waves-light" type="button" (click)="resetForm(clienteForm)">Borrar
+      <i class="material-icons right">autorenew</i>
+    </button>
+  </div>
+  
 </form>
+
+

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ClienteService} from '../shared/cliente.service';
 import{Cliente} from '../shared/cliente.=model';
-import { element } from 'protractor';
 import{ToastrService} from 'ngx-toastr';
 @Component({
   selector: 'app-cliente-list',
@@ -15,9 +14,9 @@ export class ClienteListComponent implements OnInit {
     var x = this.clienteServices.getData();
     x.snapshotChanges().subscribe(item=>{ 
       this.ClientesList=[]
-      item.forEach(element =>{
-        var y =element.payload.toJSON();
-        y["$key"]=element.key;
+      item.forEach(El =>{
+        var y =El.payload.toJSON();
+        y["$key"]=El.key;
         this.ClientesList.push(y as Cliente);
       });
     });

@@ -13,12 +13,10 @@ export class ClienteComponent implements OnInit {
   constructor(private clienteServices:ClienteService,private tostr:ToastrService) { }
 
   ngOnInit() {
-    this.tostr.success("Entré");
     this.resetForm();
-
   }
 onSubmit(ClienteForm:NgForm){
-if(ClienteForm==null){
+if(ClienteForm.value.$key==null){
 this.clienteServices.insertCliente(ClienteForm.value);
 this.tostr.success("Registro Exitoso","Cliente registrado");
 }else{

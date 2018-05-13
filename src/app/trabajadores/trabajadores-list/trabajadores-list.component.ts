@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{TrabajadorService} from '../share/trabajador.service';
 import{Trabajador} from '../share/trabajador.model';
 import{ToastrService} from 'ngx-toastr';
+
 @Component({
   selector: 'app-trabajadores-list',
   templateUrl: './trabajadores-list.component.html',
@@ -10,7 +11,7 @@ import{ToastrService} from 'ngx-toastr';
 export class TrabajadoresListComponent implements OnInit {
 
   TrabajadorList: Trabajador[];
-  constructor(private trabajadorServices: TrabajadorService, private tost: ToastrService) { }
+  constructor(private trabajadorServices: TrabajadorService, private tostr: ToastrService) { }
   ngOnInit() {
     let x = this.trabajadorServices.getData();
     x.snapshotChanges().subscribe((item) => {
@@ -25,7 +26,7 @@ export class TrabajadoresListComponent implements OnInit {
   onEdit(cli:Trabajador){
     this.trabajadorServices.selectedTrabajador = Object.assign({},cli);
   }
-  onDelete($key:string){
+  onDelete($key : string){
     if(confirm('¿Esta seguro que desea borrar el Trabajador?')==true){
        this.trabajadorServices.deleteTrabajador($key);
     this.tostr.warning("Trabajador borrado correctamente","Trabajador registrado")
