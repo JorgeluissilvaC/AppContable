@@ -2,7 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import{AngularFireModule} from 'angularfire2';
 import{AngularFireDatabaseModule} from 'angularfire2/database';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import{environment} from '../environments/environment';
@@ -20,6 +24,7 @@ import { TrabajadorComponent } from './trabajadores/trabajador/trabajador.compon
 import { InicioComponent } from './inicio/inicio.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 import { RouterModule, Routes } from '@angular/router';
+
 
 const appRoutes: Routes = [
   {
@@ -49,14 +54,17 @@ const appRoutes: Routes = [
     InicioComponent,
     NotFoundComponent
   ],
-  imports: [
+  imports: [MatButtonModule,
+     MatCheckboxModule,
+    BrowserAnimationsModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
     ToastrModule.forRoot(),
-    RouterModule.forRoot(
-      appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

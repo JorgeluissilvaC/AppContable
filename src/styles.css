@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 input.ng-invalid.ng-dirty {
     border-bottom: 1px solid #FF0000;
     box-shadow: 0 1px 0 0 #FF0000;
@@ -7,3 +8,4 @@ input.ng-invalid.ng-dirty {
 button:hover, a.btn:hover {
     cursor: pointer;
 }
+
