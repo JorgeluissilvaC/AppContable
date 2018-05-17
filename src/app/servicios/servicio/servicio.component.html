@@ -1,0 +1,56 @@
+<form #servicioForm=ngForm (ngSubmit)="onSubmit(servicioForm)">
+  <input type="hidden" class="form-control" name="$key" #$key="ngModel" [(ngModel)]=" servicioService.selectedServicio.$key">
+  <div class="form-group">
+    <label>Remisión</label>
+    <input class="form-control" name="Remision" #Remision="ngModel" [(ngModel)]=" servicioService.selectedServicio.Remision" placeholder="Remisión">
+  </div>
+  <div class="form-group">
+    <label>Fecha</label>
+    <input class="form-control" name="Fecha" #Fecha="ngModel" [(ngModel)]=" servicioService.selectedServicio.Fecha"
+      placeholder="Fecha">
+  </div>
+  <div class="form-group">
+    <label>Cliente</label>
+    <input class="form-control" name="Cliente" #Cliente="ngModel" [(ngModel)]=" servicioService.selectedServicio.Cliente"
+      placeholder="Cliente">
+  </div>
+  <div class="form-group">
+    <label>Dirección</label>
+    <input class="form-control" name="Direccion" #Direccion="ngModel" [(ngModel)]=" servicioService.selectedServicio.Direccion"
+      placeholder="Dirección">
+  </div>
+  <div class="form-group">
+    <label>Area</label>
+    <input class="form-control" name="Area" #Area="ngModel" [(ngModel)]=" servicioService.selectedServicio.Area"
+      placeholder="Area">
+  </div>
+  <div class="form-group">
+    <label>Tipo</label>
+    <input class="form-control" name="Tipo" #Tipo="ngModel" [(ngModel)]=" servicioService.selectedServicio.Tipo"
+      placeholder="Tipo">
+  </div>
+  <div class="form-group">
+    <label>Técnico</label>
+    <input class="form-control" name="Tecnico" #Tecnico="ngModel" [(ngModel)]=" servicioService.selectedServicio.Tecnico"
+      placeholder="Técnico">
+  </div>
+  <div class="form-group">
+    <label>Observación</label>
+    <input class="form-control" name="Observacion" #Observacion="ngModel" [(ngModel)]=" servicioService.selectedServicio.Observacion"
+      placeholder="Observación">
+  </div>
+  <div class="form-group">
+    <label>Factura</label>
+    <input class="form-control" name="Factura" #Remision="ngModel" [(ngModel)]=" servicioService.selectedServicio.Remision"
+      placeholder="Factura">
+  </div>
+
+  <div class="form-group">
+    <button class="btn waves-effect waves-light" type="submit" [disabled]="!servicioForm.valid">Guardar
+      <i class="material-icons right">send</i>
+    </button>
+    <button class="btn waves-effect waves-light" type="button" (click)="resetForm(servicioForm)">Borrar
+      <i class="material-icons right">autorenew</i>
+    </button>
+  </div>
+</form>

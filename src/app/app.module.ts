@@ -24,6 +24,8 @@ import { TrabajadorComponent } from './trabajadores/trabajador/trabajador.compon
 import { InicioComponent } from './inicio/inicio.component'
 import { NotFoundComponent } from './not-found/not-found.component'
 import { RouterModule, Routes } from '@angular/router';
+import { ServiciosComponent } from './servicios/servicios.component';
+import { ServicioComponent } from './servicios/servicio/servicio.component';
 
 
 const appRoutes: Routes = [
@@ -39,6 +41,10 @@ const appRoutes: Routes = [
     path: 'trabajadores',
     component: TrabajadoresComponent,
   },
+  {
+    path: 'servicios',
+    component: ServiciosComponent,
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -52,7 +58,9 @@ const appRoutes: Routes = [
     TrabajadoresListComponent,
     TrabajadorComponent,
     InicioComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ServiciosComponent,
+    ServicioComponent
   ],
   imports: [MatButtonModule,
      MatCheckboxModule,

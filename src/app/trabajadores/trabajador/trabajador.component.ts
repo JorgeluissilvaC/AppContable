@@ -11,7 +11,7 @@ import {ToastrService} from 'ngx-toastr';
 export class TrabajadorComponent implements OnInit {
 
 
-  constructor(private trabajadorServices: TrabajadorService,private tostr:ToastrService) { }
+  constructor(private trabajadorServices: TrabajadorService, private tostr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();
