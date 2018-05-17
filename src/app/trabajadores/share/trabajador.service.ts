@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
-import {Trabajador} from './trabajador.model';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Trabajador } from './trabajador.model';
 @Injectable({
   providedIn: 'root'
 })
