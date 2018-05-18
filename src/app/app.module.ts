@@ -26,6 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ServicioComponent } from './servicios/servicio/servicio.component';
+import { MaterializeModule } from 'angular2-materialize';
 
 
 const appRoutes: Routes = [
@@ -72,7 +73,8 @@ const appRoutes: Routes = [
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

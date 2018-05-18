@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import { Cliente } from './cliente.model';
 @Injectable({
   providedIn: 'root'
@@ -59,5 +59,9 @@ export class ClienteService {
   }
   deleteCliente($key: string) {
     this.clienteList.remove($key);
+  }
+
+  searchCliente(start: string, end: string): AngularFireList<any> {
+    return this.fireBase.list('/clientes', ref => ref.limitToFirst(10).orderByChild('Nombres').startAt(start).endAt(end));
   }
 }
